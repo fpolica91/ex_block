@@ -15,6 +15,7 @@ defmodule ExChain.BlockChain.Block do
     %__MODULE__{timestamp: timestamp, last_hash: last_hash, hash: hash, data: data}
   end
 
+
   def genesis() do
     new(1_599_909_623_805_627, "-", "genesis data")
   end
@@ -33,7 +34,5 @@ defmodule ExChain.BlockChain.Block do
     |>DateTime.to_unix(1_000_000)
 
   end
-
-
 
 end
