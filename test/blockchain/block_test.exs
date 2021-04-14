@@ -24,4 +24,12 @@ defmodule ExChain.Blockchain.BlockTest do
       assert %Block{data: "this is mined data",  last_hash: ^hash } = mined_block
     end
   end
+
+  describe "creates a new block" do
+    test "new/3" do
+      last_hash = "random_hash"
+      timestamp = DateTime.utc_now() |> DateTime.to_unix(1_000_000)
+      assert  %Block{data: "chloe is a piggy", last_hash: "random_hash"} = Block.new(timestamp, last_hash, "chloe is a piggy")
+    end
+  end
 end
